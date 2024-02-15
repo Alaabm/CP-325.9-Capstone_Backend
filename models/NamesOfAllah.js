@@ -1,19 +1,19 @@
 const { Schema, model} = require("../config/db-connection")
 
-const gemSchema = new Schema({
-    username: {
+const namesOfAllahSchema = new Schema({
+    "#": {
     type: String,
     required: true,
     },
-    password: {
+    name: {
         type: String,
         required: true,
         },
-    topic: {
+    Transliteration: {
         type: String,
         required: true, 
     },
-    gem: {
+    meaning: {
         type: String,
         required: true,
     }
@@ -21,4 +21,4 @@ const gemSchema = new Schema({
     timestamps: true,
 })
 
-module.exports = model("Gem", gemSchema)
+module.exports = model("Name of Allah", namesOfAllahSchema)

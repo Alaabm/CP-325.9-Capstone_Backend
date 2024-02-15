@@ -11,6 +11,8 @@ const cors = require("cors");
 
 //ADDED BY ME
 const gemRouter = require("./routes/gems");
+//ADDED BY ME
+const namesOfAllahRouter = require("./routes/namesOfAllah");
 
 // Configuring the server to accept and parse JSON data.
 app.use(express.json());
@@ -21,6 +23,10 @@ app.use(cors());
 // /gems
 //connect the router//loads the controller/loads the model/loads mongoose from config(all connected)
 app.use("/gems", gemRouter);
+//ADDED BY ME
+// /namesOfAllah
+//connect the router//loads the controller/loads the model/loads mongoose from config(all connected)
+app.use("/namesOfAllah", namesOfAllahRouter);
 
 
 // Calling the listen function telling the server to listen on port 3000

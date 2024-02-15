@@ -24,16 +24,19 @@ async function create(req, res) {
     }
 }
 
-// async function update(req, res) {
-//     try {
-//         const updatedGem = await Gem.findByIdAndUpdate(req.params.id)
-//         if (updatedGem){
-//             res.status(202).send(updatedGem)
-//         }
-//     }catch(err) {
-//         res.status(400).send(err)
-//     }
-// }
+
+async function update(req, res) {
+    try {
+        const updatedGem = await Gem.findByIdAndUpdate(req.params.id, req.body, {
+            new: true,
+        })
+        if (updatedGem){
+            res.status(202).send(updatedGem)
+        }
+    }catch(err) {
+        res.status(400).send(err)
+    }
+}
 
 async function destroy(req, res) {
     try {
@@ -50,5 +53,6 @@ module.exports = {
     index,
     create,
     destroy,
+    update,
 };
 
